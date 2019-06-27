@@ -42,6 +42,7 @@ wire [2:0] ALUOp_wire;
 wire [3:0] ALUOperation_wire;
 wire [4:0] WriteRegister_wire;
 
+wire [31:0] PC_wire;
 
 wire [31:0] Instruction_wire;
 wire [31:0] ReadData1_wire;
@@ -73,11 +74,19 @@ ControlUnit
 );
 
 
+PC_Register
+#(
+	.N(32)
+)
 
 
-
-
-
+ProgramCounter
+(
+	.clk(clk)
+	.reset(reset)
+	.NewPC(PC_4_wire)
+	.PCValue(PC_wire)
+);
 
 
 
@@ -96,7 +105,7 @@ Adder32bits
 PC_Puls_4
 (
 	.Data0(PC_wire),
-	.Data1(4),
+	.Data1(4),	
 	
 	.Result(PC_4_wire)
 );

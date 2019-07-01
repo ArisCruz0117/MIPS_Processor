@@ -58,9 +58,9 @@ localparam LUI = 4'b1111;
 		  LUI: // load upper immidiate
 		   ALUResult= {B[15:0],16'b0};
 		  SLL: // shift left logical
-			ALUResult= A << Shamt;
+			ALUResult= B << Shamt;
 		  SRL: // shift right logical
-			ALUResult= A >> Shamt;
+			ALUResult= B >> Shamt;
 
 		default:
 			ALUResult= 0;

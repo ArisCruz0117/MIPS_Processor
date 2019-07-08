@@ -82,9 +82,9 @@ PC_Register
 
 ProgramCounter
 (
-	.clk(clk)
-	.reset(reset)
-	.NewPC(PC_4_wire)
+	.clk(clk),
+	.reset(reset),
+	.NewPC(PC_4_wire),
 	.PCValue(PC_wire)
 );
 
